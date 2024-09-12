@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emanuels Website</title>
     <link rel="stylesheet" href="../CSS/styles.css">
+    <script src="../JS/script.js"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-<script src="../JS/script.js"></script>    
+<body onload="homePage()">
+     <div class="header">
+        <div class="nav-bar-list">
+            <ul class="nav-bar">
+                <li class="nav-item"><a href="#" onclick="aboutPage()">About</a></li>    
+                <li class="nav-item"><a href="#" onclick="homePage()">Home</a></li>
+                <li class="nav-item"><a href="#" onclick="projectsPage()">Projects</a></li>
+                <li class="nav-item"><a href="#" onclick="contactPage()">Contact</a></li>
+            </ul>    
+        </div>
+        <div class="icons">
+            <a class="icon" href="https://github.com/Emelloul98" target="_blank">
+                <i class="fa-brands fa-github fa-4x"></i>
+            </a>
+            <a class="icon" href="https://www.linkedin.com/in/emanuel-melloul-496125237/" target="_blank">
+                <i class="fa-brands fa-linkedin-in fa-4x"></i>
+            </a>
+            <a class="icon" href="mailto:emanuelmelloul@gmail.com">
+                <i class="fa-solid fa-envelope fa-4x"></i>
+            </a>
+        </div>   
+     </div>
+     <!-- <div class="main">
+        <img class="personal-image" src="../images/my_pic.jpg" alt="">
+        <p class="personal-info">
+            Hi, I'm Emanuel Melloul, a software developer
+        </p>
+     </div> -->
 </body>
 </html>
