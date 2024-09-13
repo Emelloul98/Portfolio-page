@@ -11,7 +11,6 @@ html, body {
     height: 100%;
     box-sizing: border-box;
 }
-
 /* header */
 
 .header{
@@ -111,7 +110,7 @@ html, body {
 /* skills */
 
 .skills {
-    height: 80%;
+    height: 100%;
     width: 100%;
     background-color: rgb(223, 227, 230); /* Lighter background color for a cleaner look */
     padding: 2% 5%; 
@@ -132,7 +131,7 @@ html, body {
     grid-template-columns: 250px 1fr;
     align-items: start;
     gap: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 .skills h2 {
     display: flex;
@@ -151,7 +150,11 @@ html, body {
     flex-wrap: wrap;
 }
 .skills li {
-    font-size: 1.25rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem; 
     color: #666; 
     background-color: #fff; 
     border: 1px solid #ddd; 
@@ -160,9 +163,35 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s, box-shadow 0.3s; 
     margin-right: 0.7rem;
+    width: 100px;  /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflowing content */
+    text-align: center; /* Center text inside the box */
+}
+.skill-icon{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.6rem;
 }
 
-.skills li:hover {
-    background-color: #e0e0e0; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.personal-info p {
+    /* margin: 0; */
+    font-size: 18px; 
+    white-space: pre-line; 
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8; 
 }
