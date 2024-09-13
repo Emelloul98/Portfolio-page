@@ -112,7 +112,7 @@ html, body {
 .skills {
     height: 100%;
     width: 100%;
-    background-color: rgb(223, 227, 230); /* Lighter background color for a cleaner look */
+    background-color: rgb(223, 227, 230); 
     padding: 2% 5%; 
 }
 .skills h1 {
@@ -174,24 +174,18 @@ html, body {
     margin-bottom: 0.6rem;
 }
 
+/* projects */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.personal-info p {
-    /* margin: 0; */
-    font-size: 18px; 
-    white-space: pre-line; 
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.8; 
+.projects {
+    height: 100%;
+    width: 100%;
+    background-color: white; 
+    padding: 2% 5%; 
+}
+.projects h1 {
+    font-size: 4rem; 
+    font-family: 'Jacques Francois Shadow', serif;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3.5rem; 
 }
