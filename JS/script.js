@@ -17,9 +17,16 @@ function loadHome(){
     title2.textContent = "Software Developer";
     new_div.appendChild(title2);
 
+    /* Create an Hello title */
+    hello = document.createElement("h1");
+    hello.textContent = "Hello I'm";
+    hello.className = "hello";
+    new_div.appendChild(hello);
+    
     /* Create the h1 title */
     title1 = document.createElement("h1");
     title1.textContent = "Emanuel Melloul";
+    title1.className = "name";
     new_div.appendChild(title1);
 
     /* Create the p description */
@@ -28,6 +35,24 @@ function loadHome(){
                               "Passionate about self-learning and challenges.\n" + 
                               "You are welcome to take a look at my projects.";
     new_div.appendChild(description);
+
+    social_div=document.createElement("div");
+    social_div.className="social";
+
+    /* resume button creation */
+    let resume_link= document.createElement("a");
+    resume_link.href = "../files/Resume.pdf";
+    resume_link.download = "Resume.pdf";
+    resume_link.textContent = "Download Resume";
+    resume_link.className = "resume-link";
+    social_div.appendChild(resume_link);
+
+    // /* Icons creation */
+    icons_div=loadIcons();
+    icons_div.className="home-icons";
+    social_div.appendChild(icons_div);
+
+    new_div.appendChild(social_div);
 
     /* Create a div to wrap everything */
     bigger_div = document.createElement("div");
@@ -64,7 +89,9 @@ function loadSkills() {
     // Check if the skills page is already open
     let isExist = document.getElementById("skillsPage");
     if (isExist != null) return;
-
+    icons_div=loadIcons();
+    icons_div.classList.add('icons');
+    document.getElementsByClassName("icons")[0].appendChild(icons_div);
     // Remove the current project page
     let current_div = document.getElementsByClassName("current-page")[0];
     current_div.innerHTML = ""; // Clear existing content
@@ -73,11 +100,6 @@ function loadSkills() {
     let new_div = document.createElement("div");
     new_div.className = "skills";
     new_div.id = "skillsPage";
-
-    // Create and append the Skills title
-    // let title = document.createElement("h1");
-    // title.textContent = "Skills";
-    // new_div.appendChild(title);
 
     // Create the skills-list div
     let skills_list = document.createElement("div");
@@ -158,6 +180,51 @@ function loadSkills() {
     current_div.appendChild(new_div);
 }
 
+function loadIcons()
+{
+document.getElementsByClassName("icons")[0].innerHTML = "";
+const iconsDiv = document.createElement('div');
+
+// Create the GitHub link
+const githubLink = document.createElement('a');
+githubLink.classList.add('icon');
+githubLink.href = 'https://github.com/Emelloul98';
+githubLink.target = '_blank';
+
+// Create the GitHub icon
+const githubIcon = document.createElement('i');
+githubIcon.classList.add('fa-brands', 'fa-github', 'fa-2x');
+githubLink.appendChild(githubIcon);
+
+// Create the LinkedIn link
+const linkedInLink = document.createElement('a');
+linkedInLink.classList.add('icon');
+linkedInLink.href = 'https://www.linkedin.com/in/emanuel-melloul-496125237/';
+linkedInLink.target = '_blank';
+
+// Create the LinkedIn icon
+const linkedInIcon = document.createElement('i');
+linkedInIcon.classList.add('fa-brands', 'fa-linkedin-in', 'fa-2x');
+linkedInLink.appendChild(linkedInIcon);
+
+// Create the email link
+const emailLink = document.createElement('a');
+emailLink.classList.add('icon');
+emailLink.href = 'mailto:emanuelmelloul@gmail.com';
+
+// Create the email icon
+const emailIcon = document.createElement('i');
+emailIcon.classList.add('fa-solid', 'fa-envelope', 'fa-2x');
+emailLink.appendChild(emailIcon);
+
+// Append the links to the icons div
+iconsDiv.appendChild(githubLink);
+iconsDiv.appendChild(linkedInLink);
+iconsDiv.appendChild(emailLink);
+
+return iconsDiv;
+}
+
 function loadProjects(){
     // Check if the project page is already open
     let isExist = document.getElementById("projectsPage");
@@ -165,6 +232,9 @@ function loadProjects(){
     // Remove the current project page
     let current_div = document.getElementsByClassName("current-page")[0];
     current_div.innerHTML = ""; // Clear existing content
+    icons_div=loadIcons();
+    icons_div.classList.add('icons');
+    document.getElementsByClassName("icons")[0].appendChild(icons_div);
     // Create the projects page div
     let new_div = document.createElement("div");
     new_div.className = "projects";

@@ -105,24 +105,27 @@ html, body {
     justify-content: center;
     height: 80vh;
 }
-.personal-info h1 {
+.name {
     font-size: 3rem; 
     font-family: "Jacques Francois Shadow", serif;
     font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+.hello {
+    font-size: 4.8rem; 
 }
 .personal-info h2 {
-    font-size: 1.5rem; 
-    color: rgb(14, 1, 1);
+    font-size: 1.2rem; 
     margin: 0;
 }
 
 .personal-info p {
-    font-size: 1rem; 
+    font-size: 0.8rem; 
     white-space: pre-line; 
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.8; 
+    margin-bottom: 1rem;
 }
-
 /* Wrapper to center everything */
 .circle-wrapper {
     position: relative;
@@ -131,19 +134,17 @@ html, body {
     align-items: center;
     height: 100vh; /* Full height of the viewport */
 }
-
 /* The rotating circle */
 .rotating-circle {
     width: 16rem;
     height: 16rem;
     border-radius: 50%; /* Makes the border a circle */
-    border: 5px solid transparent; /* Border is initially transparent */
-    border-top: 5px solid #3498db; /* Top border visible (this creates the "rotating" effect) */
-    border-right: 5px solid #3498db; /* Right border also visible */
-    animation: rotate 3s linear infinite; /* Rotate the circle infinitely */
+    border: 5px solid #3498db; /* Blue border */
+    /* border-top: 5px solid #3498db; 
+    border-right: 5px solid #3498db;  */
+    /* animation: rotate 3s linear infinite;  */
     margin-left: 5rem;
 }
-
 /* Static image container */
 .image-container {
     position: absolute; /* Absolute positioning to place it in the middle */
@@ -152,14 +153,12 @@ html, body {
     border-radius: 50%; 
     margin-left: 5rem;
 }
-
 /* The static image */
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the image fills the container without distortion */
 }
-
 /* Animation to rotate the circle */
 @keyframes rotate {
     from {
@@ -169,7 +168,38 @@ html, body {
         transform: rotate(360deg); /* Full rotation */
     }
 }
+/* Styling for the anchor to look like a button */
+a.resume-link {
+    background-color: #007bff; /* Primary blue color */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Padding around the 'button' */
+    border: none; /* Remove default border */
+    border-radius: 10px;
+    font-size: 1rem; /* Adjust font size */
+    cursor: pointer; /* Show pointer when hovered */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    font-family: 'Arial', sans-serif; /* Font style */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Ensure it's only as wide as the content */
+    width:45%
+}
 
+/* Hover effect for the anchor 'button' */
+a.resume-link:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+.social{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.home-icons {
+    display: flex; 
+    gap: 0.8rem;
+    margin-left: 2rem; 
+}
 /* skills */
 
 .skills {
@@ -177,13 +207,6 @@ html, body {
     width: 100%;
     padding: 2% 4%; 
 }
-/* .skills h1 {
-    font-size: 4rem; 
-    font-family: 'Jacques Francois Shadow', serif;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 3.5rem; 
-} */
 .skills-list {
     display: flex;
     flex-direction: column;
