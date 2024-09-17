@@ -1,10 +1,264 @@
-function homePage()
+function loadHome(){
+    /* Check if the home page is already open */
+    isExist = document.getElementById("homePage");
+    if (isExist != null) return;
+
+    /* Remove the current project page */
+    current_div = document.getElementsByClassName("current-page")[0];
+    current_div.innerHTML = "";
+
+    /* Create the home page div */
+    new_div = document.createElement("div");
+    new_div.className = "personal-info";
+    new_div.id = "homePage";
+
+    /* Create the h2 title */
+    title2 = document.createElement("h2");
+    title2.textContent = "Software Developer";
+    new_div.appendChild(title2);
+
+    /* Create an Hello title */
+    hello = document.createElement("h1");
+    hello.textContent = "Hello I'm";
+    hello.className = "hello";
+    new_div.appendChild(hello);
+    
+    /* Create the h1 title */
+    title1 = document.createElement("h1");
+    title1.textContent = "Emanuel Melloul";
+    title1.className = "name";
+    new_div.appendChild(title1);
+
+    /* Create the p description */
+    description = document.createElement("p");
+    description.textContent = "I'm a 26-year-old Software Engineering student.\n" + 
+                              "Passionate about self-learning and challenges.\n" + 
+                              "You are welcome to take a look at my projects.";
+    new_div.appendChild(description);
+
+    social_div=document.createElement("div");
+    social_div.className="social";
+
+    /* resume button creation */
+    let resume_link= document.createElement("a");
+    resume_link.href = "../files/Resume.pdf";
+    resume_link.download = "Resume.pdf";
+    resume_link.textContent = "Download Resume";
+    resume_link.className = "resume-link";
+    social_div.appendChild(resume_link);
+
+    // /* Icons creation */
+    icons_div=loadIcons();
+    icons_div.className="home-icons";
+    social_div.appendChild(icons_div);
+
+    new_div.appendChild(social_div);
+
+    /* Create a div to wrap everything */
+    bigger_div = document.createElement("div");
+    bigger_div.className = "home-page";
+    bigger_div.appendChild(new_div);
+
+    /* Circle wrapper creation */
+    circle_wrapper = document.createElement("div");
+    circle_wrapper.className = "circle-wrapper";
+    bigger_div.appendChild(circle_wrapper);
+
+    /* Rotating circle creation */
+    rotating_circle = document.createElement("div");
+    rotating_circle.className = "rotating-circle";
+    circle_wrapper.appendChild(rotating_circle);
+
+    /* Static image container creation - sibling of rotating circle */
+    image_container = document.createElement("div");
+    image_container.className = "image-container";
+    circle_wrapper.appendChild(image_container);
+
+    /* The static image inside the container */
+    my_img = document.createElement("img");
+    my_img.src = "../images/myImage.jpg";
+    my_img.alt = "my image";
+    image_container.appendChild(my_img);
+
+    /* Enter the home page to the current page div */
+    current_div.appendChild(bigger_div);
+}
+
+
+function loadSkills() {
+    // Check if the skills page is already open
+    let isExist = document.getElementById("skillsPage");
+    if (isExist != null) return;
+    icons_div=loadIcons();
+    icons_div.classList.add('icons');
+    document.getElementsByClassName("icons")[0].appendChild(icons_div);
+    // Remove the current project page
+    let current_div = document.getElementsByClassName("current-page")[0];
+    current_div.innerHTML = ""; // Clear existing content
+
+    // Create the skills page div
+    let new_div = document.createElement("div");
+    new_div.className = "skills";
+    new_div.id = "skillsPage";
+
+    // Create the skills-list div
+    let skills_list = document.createElement("div");
+    skills_list.className = "skills-list";
+
+    // Function to generate each skill row (title and skills list)
+    function createSkillRow(titleText, skillsArray) {
+        let skill_row = document.createElement("div");
+        skill_row.className = "skill-row";
+
+        let skill_title = document.createElement("h2");
+        skill_title.textContent = titleText;
+        skill_row.appendChild(skill_title);
+
+        let skill_ul = document.createElement("ul");
+
+        skillsArray.forEach(skill => {
+            let skill_li = document.createElement("li");
+
+            let skill_img = document.createElement("img");
+            skill_img.className = "skill-icon";
+            skill_img.src = skill.icon;
+            skill_img.alt = `${skill.name} icon`;
+
+            skill_li.appendChild(skill_img);
+            skill_li.append(` ${skill.name}`);
+
+            skill_ul.appendChild(skill_li);
+        });
+
+        skill_row.appendChild(skill_ul);
+        return skill_row;
+    }
+
+    // Programming Languages
+    let programmingLanguages = [
+        { name: "Java", icon: "../icons/Java.svg" },
+        { name: "Python", icon: "../icons/Python.svg" },
+        { name: "C", icon: "../icons/C.svg" },
+        { name: "C++", icon: "../icons/C++.svg" },
+        { name: "JavaScript", icon: "../icons/JavaScript.svg" },
+        { name: "HTML", icon: "../icons/HTML5.svg" },
+        { name: "CSS", icon: "../icons/CSS.svg" },
+        { name: "Assembly", icon: "../icons/assembly.png" },
+        { name: "SQL", icon: "../icons/SQL.svg" }
+    ];
+
+    // Frameworks
+    let frameworks = [
+        { name: "React", icon: "../icons/React.svg" },
+        { name: "React Native", icon: "../icons/React.svg" },
+        { name: "Node.js", icon: "../icons/Nodejs.svg" },
+        { name: "Express", icon: "../icons/Express.svg" },
+        { name: "jQuery", icon: "../icons/jQuery.svg" }
+    ];
+
+    // Tools
+    let tools = [
+        { name: "git", icon: "../icons/git.svg" },
+        { name: "GitHub", icon: "../icons/GitHub.svg" },
+        { name: "VS Code", icon: "../icons/VS-Code.svg" },
+        { name: "JetBrains", icon: "../icons/JetBrains.svg" },
+        { name: "Eclipse", icon: "../icons/Eclipse.svg" },
+        { name: "Linux VMware", icon: "../icons/VMware.svg" },
+        { name: "Postman", icon: "../icons/Postman.svg" },
+        { name: "Wireshark", icon: "../icons/Wireshark.svg" }
+    ];
+
+    // Append skill rows to the skills-list div
+    skills_list.appendChild(createSkillRow("Programming Languages:", programmingLanguages));
+    skills_list.appendChild(createSkillRow("Frameworks:", frameworks));
+    skills_list.appendChild(createSkillRow("Tools:", tools));
+
+    // Append the skills-list div to the main skills div
+    new_div.appendChild(skills_list);
+
+    // Finally, append the new skills page to the current-page div
+    current_div.appendChild(new_div);
+}
+
+function loadIcons()
 {
+document.getElementsByClassName("icons")[0].innerHTML = "";
+const iconsDiv = document.createElement('div');
+
+// Create the GitHub link
+const githubLink = document.createElement('a');
+githubLink.classList.add('icon');
+githubLink.href = 'https://github.com/Emelloul98';
+githubLink.target = '_blank';
+
+// Create the GitHub icon
+const githubIcon = document.createElement('i');
+githubIcon.classList.add('fa-brands', 'fa-github', 'fa-2x');
+githubLink.appendChild(githubIcon);
+
+// Create the LinkedIn link
+const linkedInLink = document.createElement('a');
+linkedInLink.classList.add('icon');
+linkedInLink.href = 'https://www.linkedin.com/in/emanuel-melloul-496125237/';
+linkedInLink.target = '_blank';
+
+// Create the LinkedIn icon
+const linkedInIcon = document.createElement('i');
+linkedInIcon.classList.add('fa-brands', 'fa-linkedin-in', 'fa-2x');
+linkedInLink.appendChild(linkedInIcon);
+
+// Create the email link
+const emailLink = document.createElement('a');
+emailLink.classList.add('icon');
+emailLink.href = 'mailto:emanuelmelloul@gmail.com';
+
+// Create the email icon
+const emailIcon = document.createElement('i');
+emailIcon.classList.add('fa-solid', 'fa-envelope', 'fa-2x');
+emailLink.appendChild(emailIcon);
+
+// Append the links to the icons div
+iconsDiv.appendChild(githubLink);
+iconsDiv.appendChild(linkedInLink);
+iconsDiv.appendChild(emailLink);
+
+return iconsDiv;
+}
+
+function loadProjects(){
+    // Check if the project page is already open
+    let isExist = document.getElementById("projectsPage");
+    if (isExist != null) return;
+    // Remove the current project page
+    let current_div = document.getElementsByClassName("current-page")[0];
+    current_div.innerHTML = ""; // Clear existing content
+    icons_div=loadIcons();
+    icons_div.classList.add('icons');
+    document.getElementsByClassName("icons")[0].appendChild(icons_div);
+    // Create the projects page div
+    let new_div = document.createElement("div");
+    new_div.className = "projects";
+    new_div.id = "projectsPage";
+    /* creates the projects title */
+    // title = document.createElement("h1");
+    // title.textContent="Projects";
+    // new_div.appendChild(title);
+    /* creates the subject content div */
+    subject_div = document.createElement("div");
+    subject_div.className="subject-content";
+    new_div.appendChild(subject_div);
+    /* creates the details div */
+    details_div=document.createElement("div");
+    details_div.className="project-details";
+    new_div.appendChild(details_div);
+    current_div.appendChild(new_div);
     addSubject("Python Projects","Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",pythonButtonClick);
     addSubject("C projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",cButtonClick);
     addSubject("Full-Stack projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",fullStackButtonClick);
+    /* enter the projects page to the current page div */
     
-}
+}  
+
 function addSubject(title, description, func) {
     const subject_div = document.getElementsByClassName("subject-content")[0];
     const new_subject_btn = document.createElement("Button");
@@ -102,4 +356,19 @@ function create_current_project_div()
     const new_div = document.createElement("div");
     new_div.className = "current-project ";
     project_div.appendChild(new_div);
+}
+
+function loadContact(){
+    // Check if the contact page is already open
+    let isExist = document.getElementById("contactPage");
+    if (isExist != null) return;
+
+    // Remove the current project page
+    let current_div = document.getElementsByClassName("current-page")[0];
+    current_div.innerHTML = ""; // Clear existing content
+
+    // Create the contact page div
+    let new_div = document.createElement("div");
+    new_div.className = "contact";
+    new_div.id = "contactPage";
 }
