@@ -79,15 +79,13 @@ html, body {
     display: flex;
     align-items: center;
 }
-.nav-item a{
+.nav-item a {
     color: white;
     font-family: Arial;
     text-decoration: none;
-    font-size:1.5rem;
+    font-size: 1.5rem;
     padding-left: 10rem;
-}
-.nav-item a:hover{
-    transform: scale(0.85);
+    position: relative;
 }
 
 /* Main */
@@ -136,20 +134,21 @@ html, body {
 }
 /* The rotating circle */
 .rotating-circle {
-    width: 16rem;
-    height: 16rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%; /* Makes the border a circle */
     border: 5px solid #3498db; /* Blue border */
-    /* border-top: 5px solid #3498db; 
-    border-right: 5px solid #3498db;  */
-    /* animation: rotate 3s linear infinite;  */
+    /* border: 5px solid transparent;
+    border-top: 5px solid #3498db; 
+    border-right: 5px solid #3498db; 
+    animation: rotate 3s linear infinite;  */
     margin-left: 5rem;
 }
 /* Static image container */
 .image-container {
     position: absolute; /* Absolute positioning to place it in the middle */
-    width: 15rem;
-    height: 15rem;
+    width: 18rem;
+    height: 18rem;
     border-radius: 50%; 
     margin-left: 5rem;
 }
@@ -391,4 +390,7 @@ a.resume-link:hover {
     color: white;
 }
 
+.selected-page a {
+    color: #3498db;
+}
 

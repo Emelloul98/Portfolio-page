@@ -1,4 +1,5 @@
 function loadHome(){
+    add_selected_css_to_page("Home");
     /* Check if the home page is already open */
     isExist = document.getElementById("homePage");
     if (isExist != null) return;
@@ -39,7 +40,7 @@ function loadHome(){
     social_div=document.createElement("div");
     social_div.className="social";
 
-    /* resume button creation */
+    /* resume link creation */
     let resume_link= document.createElement("a");
     resume_link.href = "../files/Resume.pdf";
     resume_link.download = "Resume.pdf";
@@ -86,6 +87,7 @@ function loadHome(){
 
 
 function loadSkills() {
+    add_selected_css_to_page("Skills");
     // Check if the skills page is already open
     let isExist = document.getElementById("skillsPage");
     if (isExist != null) return;
@@ -226,6 +228,7 @@ return iconsDiv;
 }
 
 function loadProjects(){
+    add_selected_css_to_page("Projects");
     // Check if the project page is already open
     let isExist = document.getElementById("projectsPage");
     if (isExist != null) return;
@@ -303,7 +306,6 @@ function fullStackButtonClick()
 
 function add_project(proj_title,proj_description,proj_images,proj_link,proj_texts)
 {
-    // document.getElementsByClassName("project-details")[0].innerHTML = "";
     create_current_project_div();
     const project_div = document.getElementsByClassName("current-project")[0];
     const new_div = document.createElement("div");  // Create a new div to hold all elements
@@ -359,6 +361,7 @@ function create_current_project_div()
 }
 
 function loadContact(){
+    add_selected_css_to_page("Contact");
     // Check if the contact page is already open
     let isExist = document.getElementById("contactPage");
     if (isExist != null) return;
@@ -371,4 +374,21 @@ function loadContact(){
     let new_div = document.createElement("div");
     new_div.className = "contact";
     new_div.id = "contactPage";
+}
+
+function add_selected_css_to_page(page_name) {
+    const navItems = document.querySelectorAll('.nav-item');
+    
+    navItems.forEach(item => {
+        // Remove 'selected-page' class from all items
+        item.classList.remove('selected-page');
+
+        // Check the text content of the <a> element inside the <li>
+        const linkText = item.querySelector('a').textContent.trim();
+        
+        // If the link text matches the provided page name, add 'selected-page' class
+        if (linkText === page_name) {
+            item.classList.add('selected-page');
+        }
+    });
 }
