@@ -46,7 +46,7 @@ html, body {
     align-items: center;
     position: relative;
     width: 100%;
-    height: 10%;
+    height: 15%;
     /* background-color: black; */
     color: white;
     margin-bottom: 2rem;
@@ -78,15 +78,21 @@ html, body {
 .nav-item{
     display: flex;
     align-items: center;
+    padding-left: 10rem;
 }
 .nav-item a {
     color: white;
     font-family: Arial;
     text-decoration: none;
     font-size: 1.5rem;
-    padding-left: 10rem;
     position: relative;
 }
+/* #home-icon{
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    margin: 8px;
+    padding: 8px;
+} */
 
 /* Main */
 .home-page{
@@ -137,7 +143,7 @@ html, body {
     width: 20rem;
     height: 20rem;
     border-radius: 50%; /* Makes the border a circle */
-    border: 5px solid #3498db; /* Blue border */
+    /* border: 5px solid #3498db;  */
     /* border: 5px solid transparent;
     border-top: 5px solid #3498db; 
     border-right: 5px solid #3498db; 
@@ -276,55 +282,34 @@ a.resume-link:hover {
 
 .projects {
     display: flex;
-    flex-direction: column;
-    height: 150%;
-    width: 100%;
-    /* background-color: white;  */
-    padding: 2% 5%; 
-}
-.projects h1 {
-    display: flex;
     justify-content: center;
-    font-size: 4rem; 
-    font-family: 'Jacques Francois Shadow', serif;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 3rem; 
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    padding: 2% 5%; 
 }
 .subject-content {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
     justify-content: center;
+    align-items: center;
     margin-bottom: 5%;
 }
-.project {
-    width:30%;
-    height: 100%;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+.subject-image{
+    display: flex;
+    width:25rem;
+    height: 15rem;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    background-color: white;
+    padding: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
     margin-right: 1.5rem;
 }
-.project h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-}
-.project p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.6;
-}
-.project:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-    transform: translateY(-5px); /* Slight lift on hover */
+.subject-image:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 8px 25px rgba(0, 0, 0, 0.15); 
 }
 
 /* python-projects */

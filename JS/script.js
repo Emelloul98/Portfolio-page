@@ -52,8 +52,13 @@ function loadHome(){
     icons_div=loadIcons();
     icons_div.className="home-icons";
     social_div.appendChild(icons_div);
-
     new_div.appendChild(social_div);
+
+    /* Add apacial id to the home-icons */
+    // const anchorElements = icons_div.querySelectorAll('.home-icons a');
+    // anchorElements.forEach(anchorElement => {
+    //     anchorElement.setAttribute('id','home-icon')
+    // });
 
     /* Create a div to wrap everything */
     bigger_div = document.createElement("div");
@@ -255,31 +260,22 @@ function loadProjects(){
     details_div.className="project-details";
     new_div.appendChild(details_div);
     current_div.appendChild(new_div);
-    addSubject("Python Projects","Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",pythonButtonClick);
-    addSubject("C projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",cButtonClick);
-    addSubject("Full-Stack projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",fullStackButtonClick);
-    /* enter the projects page to the current page div */
-    
+    // addSubject("Python Projects","Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",pythonButtonClick);
+    // addSubject("C projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",cButtonClick);
+    // addSubject("Full-Stack projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",fullStackButtonClick);
+    addSubjectImage("../images/machine-learning.webp",pythonButtonClick);
+    addSubjectImage("../images/c-programming.png",cButtonClick);
+    addSubjectImage("../images/full-stack-web-development.jpg",fullStackButtonClick);
 }  
 
-function addSubject(title, description, func) {
+function addSubjectImage(img,func){
     const subject_div = document.getElementsByClassName("subject-content")[0];
-    const new_subject_btn = document.createElement("Button");
-    new_subject_btn.className = "project";
-    new_subject_btn.addEventListener("click", func);
-
-    const subject_title = document.createElement("h3");
-    subject_title.textContent = title;
-    
-    const project_description = document.createElement("p");
-    project_description.textContent = description;
-    
-    new_subject_btn.appendChild(subject_title);
-    new_subject_btn.appendChild(project_description);
-
-    subject_div.appendChild(new_subject_btn);
+    subject_img= document.createElement("img");
+    subject_img.src=img;
+    subject_img.className="subject-image";
+    subject_img.addEventListener("click",func);
+    subject_div.appendChild(subject_img);
 }
-
 function pythonButtonClick() {
     title="Unsupervised Learning on a Digits Dataset";
     description="In this project, I applied unsupervised learning techniques on the digits dataset from sklearn, which contains 64-dimensional data representing hand-written digits. My objective was to cluster the data into three distinct groups using Gaussian Mixture Model (GMM) and KMeans algorithms. These clustering methods were applied to identify patterns and group the data without any prior labels. I evaluated the performance of both algorithms using metrics such as silhouette score, inertia, and Bayesian Information Criterion (BIC), while visualizing the resulting clusters to gain deeper insights into the structure of the data. Additionally, I explored how dimensionality reduction techniques, such as PCA, could enhance clustering results and make visual interpretation more accessible.";
@@ -309,6 +305,16 @@ function add_project(proj_title,proj_description,proj_images,proj_link,proj_text
     create_current_project_div();
     const project_div = document.getElementsByClassName("current-project")[0];
     const new_div = document.createElement("div");  // Create a new div to hold all elements
+    // DODO
+    // Create and append close button
+    // const close_icon=document.createElement("img");
+    // close_icon.className="close-icon";
+    // close_icon.src="../icons/close.png";
+
+    // close_icon.addEventListener("click",function(){
+    //     project_div.innerHTML="";
+    // });
+    // new_div.appendChild(close_icon);
 
     // Create and append project title
     const project_title = document.createElement("h2");
