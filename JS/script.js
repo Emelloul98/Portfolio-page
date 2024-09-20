@@ -82,7 +82,7 @@ function loadHome(){
 
     /* The static image inside the container */
     my_img = document.createElement("img");
-    my_img.src = "../images/myImage.jpg";
+    my_img.src = "../images/emanuel/myImage.jpg";
     my_img.alt = "my image";
     image_container.appendChild(my_img);
 
@@ -101,7 +101,7 @@ function loadSkills() {
     document.getElementsByClassName("icons")[0].appendChild(icons_div);
     // Remove the current project page
     let current_div = document.getElementsByClassName("current-page")[0];
-    current_div.innerHTML = ""; // Clear existing content
+    current_div.innerHTML = ""; 
 
     // Create the skills page div
     let new_div = document.createElement("div");
@@ -233,43 +233,48 @@ return iconsDiv;
 }
 
 function loadProjects(){
+    
     add_selected_css_to_page("Projects");
     // Check if the project page is already open
     let isExist = document.getElementById("projectsPage");
-    if (isExist != null) return;
+    if (isExist != null) {
+        cleanProjectPage();
+        displayProject();
+
+        return;
+    }
+    
     // Remove the current project page
     let current_div = document.getElementsByClassName("current-page")[0];
-    current_div.innerHTML = ""; // Clear existing content
+    current_div.innerHTML = ""; 
     icons_div=loadIcons();
     icons_div.classList.add('icons');
     document.getElementsByClassName("icons")[0].appendChild(icons_div);
+    
     // Create the projects page div
     let new_div = document.createElement("div");
     new_div.className = "projects";
     new_div.id = "projectsPage";
-    /* creates the projects title */
-    // title = document.createElement("h1");
-    // title.textContent="Projects";
-    // new_div.appendChild(title);
-    /* creates the subject content div */
-    subject_div = document.createElement("div");
-    subject_div.className="subject-content";
-    new_div.appendChild(subject_div);
-    /* creates the details div */
-    details_div=document.createElement("div");
-    details_div.className="project-details";
-    new_div.appendChild(details_div);
+
     current_div.appendChild(new_div);
+    displayProject();
     // addSubject("Python Projects","Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",pythonButtonClick);
     // addSubject("C projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",cButtonClick);
     // addSubject("Full-Stack projects", "Advanced Machine Learning projects involving algorithm comparison and classification using: Logistic Regression, Decision Trees, K-Means, GMM, K-Fold Cross-Validation, Bagging, and AdaBoost.",fullStackButtonClick);
-    addSubjectImage("../images/machine-learning.webp",pythonButtonClick);
-    addSubjectImage("../images/c-programming.png",cButtonClick);
-    addSubjectImage("../images/full-stack-web-development.jpg",fullStackButtonClick);
 }  
+function displayProject(){
+    cleanProjectPage();
+    projects_div= document.getElementsByClassName("projects")[0];
+    content_div=document.createElement("div");
+    content_div.className="content";
+    projects_div.appendChild(content_div);
 
+    addSubjectImage("../images/subjects/machine-learning.webp",pythonButtonClick);
+    addSubjectImage("../images/subjects/c-programming.png",cButtonClick);
+    addSubjectImage("../images/subjects/full-stack-web-development.jpg",fullStackButtonClick);
+}
 function addSubjectImage(img,func){
-    const subject_div = document.getElementsByClassName("subject-content")[0];
+    const subject_div = document.getElementsByClassName("content")[0];
     subject_img= document.createElement("img");
     subject_img.src=img;
     subject_img.className="subject-image";
@@ -277,6 +282,33 @@ function addSubjectImage(img,func){
     subject_div.appendChild(subject_img);
 }
 function pythonButtonClick() {
+    cleanProjectPage();
+    createBackIcon(displayProject);
+    projects_div=document.getElementsByClassName("projects")[0];
+    projects_list=document.createElement("div");
+    projects_list.className="projects-list";
+    projects_div.appendChild(projects_list);
+
+    proj_1_img=document.createElement("img");
+    proj_1_img.src="../images/python1/unsupervised.webp";
+    proj_1_img.className="project-image";
+    proj_1_img.addEventListener("click",firstPythonProjectClicked);
+    projects_list.appendChild(proj_1_img);
+    
+    proj_2_img=document.createElement("img");
+    proj_2_img.src="../images/python2/Machine-Learning-Algorithms.webp";
+    proj_2_img.className="project-image";
+    proj_2_img.addEventListener("click",secondPythonProjectClicked);
+    projects_list.appendChild(proj_2_img);
+
+    proj_3_img=document.createElement("img");
+    proj_3_img.src="../images/python3/ensemble.jpg";
+    proj_3_img.className="project-image";
+    proj_3_img.addEventListener("click",thirdPythonProjectClicked);
+    projects_list.appendChild(proj_3_img);
+
+}
+function firstPythonProjectClicked(){
     title="Unsupervised Learning on a Digits Dataset";
     description="In this project, I applied unsupervised learning techniques on the digits dataset from sklearn, which contains 64-dimensional data representing hand-written digits. My objective was to cluster the data into three distinct groups using Gaussian Mixture Model (GMM) and KMeans algorithms. These clustering methods were applied to identify patterns and group the data without any prior labels. I evaluated the performance of both algorithms using metrics such as silhouette score, inertia, and Bayesian Information Criterion (BIC), while visualizing the resulting clusters to gain deeper insights into the structure of the data. Additionally, I explored how dimensionality reduction techniques, such as PCA, could enhance clustering results and make visual interpretation more accessible.";
     images=["../images/python1/realData.png","../images/python1/elbowFunction.png","","../images/python1/kmean-vs-GMM.png"];
@@ -288,33 +320,52 @@ function pythonButtonClick() {
     texts=[pca,elbow,kmeans,gmm];
     add_project(title,description,images,link,texts);
 }
+function secondPythonProjectClicked(){
+    title="Machine Learning Optimization Algorithms Comparison";
+    description="This project compares several machine learning optimization algorithms, including Stochastic Gradient Descent (SGD), Batch Gradient Descent, and their Singular Value Decomposition (SVD)-based versions for dimensionality reduction. The goal was to analyze the performance, convergence, and efficiency of these algorithms across various datasets. By incorporating SVD, I examined the effect of reducing the feature space on optimization performance. The project includes Python implementations of the algorithms, Jupyter Notebooks for testing, and visualizations of convergence behaviors and execution times.";
+    images=["../images/python2/comparison1.png", "../images/python2/comparison2.png"];
+    link="https://github.com/Emelloul98/Machine-Learning-Optimization-Algorithms-Comparison";
+    firstImageDescription="Convergence plots for Stochastic Gradient Descent (SGD), Batch Gradient Descent, and SVD-enhanced algorithms were generated to assess how quickly each method approaches the optimal solution. The visualizations highlight the differences in convergence speed, with SGD showing faster convergence in early stages but sometimes overshooting the minimum. Batch Gradient Descent, while slower per iteration, provides a more stable path to convergence, especially in noisy datasets.";
+    secondImageDescription="Execution time comparisons were made for the different algorithms, revealing how computationally expensive they are. With SVD, dimensionality reduction significantly lowered execution times, making the optimization more efficient for large datasets. The experiment emphasized that while SVD reduces complexity, it may sometimes slightly compromise the accuracy of the final model compared to using the full feature set.";
+    texts=[firstImageDescription, secondImageDescription];
+    add_project(title, description, images, link, texts);
+}
+function thirdPythonProjectClicked(){ 
+    title="Ensemble Learning Algorithms Comparison";
+    description="This project compares the performance and efficiency of ensemble learning algorithms, including AdaBoost, Bagging, and K-Fold Cross Validation, in predicting employee attrition. The goal was to evaluate each method's accuracy, bias-variance tradeoff, and execution time using real-world datasets. The project includes Python implementations of the algorithms, Jupyter Notebooks for testing, and visualizations of accuracy, performance metrics, and computational efficiency.";
+    images=["../images/python3/feature selection.png", "../images/python3/adaboost.png"];
+    link="https://github.com/Emelloul98/Ensemble-Learning-Algorithms-AdaBoost-K-Fold-Cross-Validation-and-Bagging.git";
+    firstImageDescription="The first image shows the effect of feature selection on the F1 score, where increasing the number of selected features significantly impacts model performance. The F1 score fluctuates as more features are introduced, revealing a sweet spot where the balance between the number of features and model accuracy is optimized.";
+    secondImageDescription="The second image presents the F1 score comparison for AdaBoost with decision trees at varying max depths. The train F1 score improves consistently with deeper trees, while the test F1 score plateaus after a certain depth, indicating the point where the model may start overfitting.";
+    texts=[firstImageDescription, secondImageDescription,
+        "Bagging (Bootstrap Aggregating) is used in this project to reduce model variance and improve robustness by training multiple decision trees on different subsets of the data. This method averages the results of individual trees to produce a more accurate and stable prediction.",
+        "K-Fold Cross-Validation was applied to ensure the model's performance generalizes well to unseen data by splitting the dataset into multiple subsets, training on a combination of them, and testing on the remaining subset. This helped optimize hyperparameters and ensure the model wasn't overfitting to specific data partitions.",
+        "AdaBoost (Adaptive Boosting) was implemented to enhance the performance of the decision tree by focusing on harder-to-classify instances. This technique builds multiple trees, each attempting to correct the errors of the previous ones, leading to an overall stronger classifier.",
+        "Throughout the project, decision trees were the primary model used in combination with these techniques. By applying Bagging, K-Fold, and AdaBoost, the aim was to strike a balance between model complexity, accuracy, and overfitting control."
+    ];    
+    add_project(title, description, images, link, texts);
+}
+
+
 
 
 function cButtonClick()
 {
-    create_current_project_div();
+    cleanProjectPage();
 }
 
 function fullStackButtonClick()
 {
-    create_current_project_div();
+    cleanProjectPage();
 }
 
 function add_project(proj_title,proj_description,proj_images,proj_link,proj_texts)
 {
-    create_current_project_div();
-    const project_div = document.getElementsByClassName("current-project")[0];
+    cleanProjectPage();
+    project_div=document.getElementsByClassName("projects")[0];
     const new_div = document.createElement("div");  // Create a new div to hold all elements
-    // DODO
-    // Create and append close button
-    // const close_icon=document.createElement("img");
-    // close_icon.className="close-icon";
-    // close_icon.src="../icons/close.png";
-
-    // close_icon.addEventListener("click",function(){
-    //     project_div.innerHTML="";
-    // });
-    // new_div.appendChild(close_icon);
+    new_div.className = "current-project";  
+    // DODO: Create and append close button
 
     // Create and append project title
     const project_title = document.createElement("h2");
@@ -357,15 +408,6 @@ function add_project(proj_title,proj_description,proj_images,proj_link,proj_text
     project_div.appendChild(new_div);
 }
 
-function create_current_project_div()
-{
-    const project_div = document.getElementsByClassName("project-details")[0];
-    project_div.innerHTML = "";
-    const new_div = document.createElement("div");
-    new_div.className = "current-project ";
-    project_div.appendChild(new_div);
-}
-
 function loadContact(){
     add_selected_css_to_page("Contact");
     // Check if the contact page is already open
@@ -397,4 +439,17 @@ function add_selected_css_to_page(page_name) {
             item.classList.add('selected-page');
         }
     });
+}
+function cleanProjectPage(){
+    const project_div = document.getElementsByClassName("projects")[0];
+    project_div.innerHTML = "";
+}
+function createBackIcon(func){
+    const icon = document.createElement('i');
+    icon.className = 'fa fa-arrow-circle-right'; 
+    icon.style.fontSize = '36px'; 
+    icon.setAttribute('id', 'back-icon');
+    icon.addEventListener('click', func);
+    // Append the icon to a specific element in your document
+    document.getElementsByClassName("projects")[0].appendChild(icon);
 }
