@@ -143,36 +143,36 @@ function loadSkills() {
 
     // Programming Languages
     let programmingLanguages = [
-        { name: "Java", icon: "../icons/Java.svg" },
-        { name: "Python", icon: "../icons/Python.svg" },
+        { name: "Java", icon: "../icons/java.svg" },
+        { name: "Python", icon: "../icons/python.svg" },
         { name: "C", icon: "../icons/C.svg" },
         { name: "C++", icon: "../icons/C++.svg" },
-        { name: "JavaScript", icon: "../icons/JavaScript.svg" },
-        { name: "HTML", icon: "../icons/HTML5.svg" },
-        { name: "CSS", icon: "../icons/CSS.svg" },
+        { name: "JavaScript", icon: "../icons/javascript.svg" },
+        { name: "HTML", icon: "../icons/html5.svg" },
+        { name: "CSS", icon: "../icons/css.svg" },
         { name: "Assembly", icon: "../icons/assembly.png" },
         { name: "SQL", icon: "../icons/SQL.svg" }
     ];
 
     // Frameworks
     let frameworks = [
-        { name: "React", icon: "../icons/React.svg" },
-        { name: "React Native", icon: "../icons/React.svg" },
-        { name: "Node.js", icon: "../icons/Nodejs.svg" },
-        { name: "Express", icon: "../icons/Express.svg" },
-        { name: "jQuery", icon: "../icons/jQuery.svg" }
+        { name: "React", icon: "../icons/react.svg" },
+        { name: "React Native", icon: "../icons/react.svg" },
+        { name: "Node.js", icon: "../icons/nodejs.svg" },
+        { name: "Express", icon: "../icons/express.svg" },
+        { name: "jQuery", icon: "../icons/jquery.svg" }
     ];
 
     // Tools
     let tools = [
         { name: "git", icon: "../icons/git.svg" },
-        { name: "GitHub", icon: "../icons/GitHub.svg" },
+        { name: "GitHub", icon: "../icons/gitHub.svg" },
         { name: "VS Code", icon: "../icons/VS-Code.svg" },
         { name: "JetBrains", icon: "../icons/JetBrains.svg" },
-        { name: "Eclipse", icon: "../icons/Eclipse.svg" },
-        { name: "Linux VMware", icon: "../icons/VMware.svg" },
-        { name: "Postman", icon: "../icons/Postman.svg" },
-        { name: "Wireshark", icon: "../icons/Wireshark.svg" }
+        { name: "Eclipse", icon: "../icons/eclipse.svg" },
+        { name: "Linux VMware", icon: "../icons/vmware.svg" },
+        { name: "Postman", icon: "../icons/postman.svg" },
+        { name: "Wireshark", icon: "../icons/wireshark.svg" }
     ];
 
     // Append skill rows to the skills-list div
