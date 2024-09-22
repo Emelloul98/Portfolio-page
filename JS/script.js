@@ -357,9 +357,10 @@ function fullStackButtonClick()
     createBackIcon(displayProject);
     const img_sources = [
         "../images/full-stack/full1/unsplash.jpg",
-        "../images/full-stack/full2/Rest.jpeg"
+        "../images/full-stack/full2/Rest.png",
+        "../images/full-stack/full3/Building-a-RESTful-API-Using-Node.webp"
     ];
-    const event_listeners = [firstFullStackProjectClicked,secondFullStackProjectClicked];
+    const event_listeners = [firstFullStackProjectClicked,secondFullStackProjectClicked,thirdFullStackProjectClicked];
     // Call the helper function to append the images
     createAndAppendProjectImage(img_sources,event_listeners);
     
@@ -632,4 +633,18 @@ function secondFullStackProjectClicked() {
         "Finally, the fourth image shows the interface where users can view the images currently associated with a project. These images are fetched from the database and displayed in a grid format, allowing users to remove images or view additional details. All image-related functionality is handled through RESTful routes that enable creating, updating, and deleting images for each project."
     ];   
     add_project(title, description, images, link, texts, fullStackButtonClick);
+}
+function thirdFullStackProjectClicked() { 
+    title = "REST API with MongoDB";
+    description = "This project is a RESTful project management service built using Node.js, Express, and MongoDB. It enables the creation, updating, and management of projects and their associated team members and images. The service features robust client-side and server-side validation using Mongoose schemas to ensure data integrity, efficient routing, and CRUD operations for seamless project management. A Postman collection has been created to test and interact with the API endpoints.";
+    link = "https://github.com/Emelloul98/Distributed-Project-Management-REST-API-using-MongoDB.git";
+    texts = [
+        "This project is built with Node.js and Express for routing and handling REST API requests. The system manages projects, team members, and images, storing all data in a MongoDB database. Core functionalities include creating, reading, updating, and deleting project information, each associated with a project manager and team members. MongoDB's Mongoose library is used for schema definition and validation, ensuring data consistency and integrity.",
+        "For each project, key details such as project name, description, and start date are stored, along with a list of team members and their roles. Each team member has a name, email, and assigned role, ensuring that the project structure is well-defined. The system also manages the addition of project-related images, where each image is associated with a unique project.",
+        "Client-side validation ensures that users input valid data into forms before submission. This helps to avoid errors when creating or updating project data. Server-side validation is also in place via Mongoose schemas, providing an additional layer of validation before data is persisted to the database.",
+        "The system implements CRUD operations for projects and members, including functions like `CreateProject`, `getProjects`, `addImageToProject`, and `deleteImageFromProject`. These operations are handled via RESTful routes in the Express framework, providing efficient, scalable interactions with the MongoDB database.",
+        "A Postman collection has been created for this project, allowing easy testing and interaction with the API. The collection includes predefined requests for all core functionalities such as creating projects, managing members, and handling images, making it simple to explore and test each endpoint.",
+        "This project focuses on keeping the code clean, structured, and organized into modular components. All routes follow RESTful principles, and the project includes thorough input validation both client-side and server-side to ensure high-quality data management. The service is designed to run on port 3001 and is initiated via `npm start`."
+    ];   
+    add_project(title, description, [], link, texts, fullStackButtonClick);
 }
