@@ -82,7 +82,7 @@ function loadHome(){
 
     /* The static image inside the container */
     my_img = document.createElement("img");
-    my_img.src = "./images/emanuel/myImage.jpg";
+    my_img.src = "@/images/emanuel/myImage.jpg";
     my_img.alt = "my image";
     image_container.appendChild(my_img);
 
