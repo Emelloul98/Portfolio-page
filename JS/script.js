@@ -1,3 +1,4 @@
+const isGitHubPages = window.location.hostname === 'emelloul98.github.io';
 function loadHome(){
     add_selected_css_to_page("Home");
     /* Check if the home page is already open */
@@ -42,7 +43,7 @@ function loadHome(){
 
     /* resume link creation */
     let resume_link= document.createElement("a");
-    resume_link.href = "/files/Resume.pdf";
+    resume_link.href = isGitHubPages ? "/Portfolio-page/files/Resume.pdf" : "/files/Resume.pdf";
     resume_link.download = "Resume.pdf";
     resume_link.textContent = "Download Resume";
     resume_link.className = "resume-link";
@@ -82,7 +83,8 @@ function loadHome(){
 
     /* The static image inside the container */
     my_img = document.createElement("img");
-    my_img.src = "/Portfolio-page/images/emanuel/myImage.jpg";
+    my_img.src = isGitHubPages ? "/Portfolio-page/images/emanuel/myImage.jpg" : "images/emanuel/myImage.jpg";
+    // https://github.com/Emelloul98/Portfolio-page/blob/main/images/emanuel/myImage.jpg
     my_img.alt = "my image";
     image_container.appendChild(my_img);
 
@@ -140,39 +142,38 @@ function loadSkills() {
         skill_row.appendChild(skill_ul);
         return skill_row;
     }
-
     // Programming Languages
     let programmingLanguages = [
-        { name: "Java", icon:"/icons/java.svg"},
-        { name: "Python", icon: "/icons/python.svg" },
-        { name: "C", icon: "/icons/C.svg" },
-        { name: "C++", icon: "/icons/C++.svg" },
-        { name: "JavaScript", icon: "/icons/javascript.svg" },
-        { name: "HTML", icon: "/icons/html5.svg" },
-        { name: "CSS", icon: "/icons/css.svg" },
-        { name: "Assembly", icon: "/icons/assembly.png" },
-        { name: "SQL", icon: "/icons/SQL.svg" }
+        { name: "Java", icon: isGitHubPages? "/Portfolio-page/icons/java.svg" : "/icons/java.svg"},
+        { name: "Python", icon: isGitHubPages? "/Portfolio-page/icons/python.svg": "/icons/python.svg" },
+        { name: "C", icon: isGitHubPages? "/Portfolio-page/icons/C.svg": "/icons/C.svg" },
+        { name: "C++", icon: isGitHubPages? "/Portfolio-page/icons/C++.svg": "/icons/C++.svg" },
+        { name: "JavaScript", icon: isGitHubPages? "/Portfolio-page/icons/javascript.svg": "/icons/javascript.svg" },
+        { name: "HTML", icon: isGitHubPages? "/Portfolio-page/icons/html5.svg": "/icons/html5.svg" },
+        { name: "CSS", icon: isGitHubPages? "/Portfolio-page/icons/css.svg": "/icons/css.svg" },
+        { name: "Assembly", icon: isGitHubPages? "/Portfolio-page/icons/assembly.png": "/icons/assembly.png" },
+        { name: "SQL", icon: isGitHubPages? "/Portfolio-page/icons/SQL.svg": "/icons/SQL.svg" }
     ];
 
     // Frameworks
     let frameworks = [
-        { name: "React", icon: "/icons/react.svg" },
-        { name: "React Native", icon: "/icons/react.svg" },
-        { name: "Node.js", icon: "/icons/nodejs.svg" },
-        { name: "Express", icon: "/icons/express.svg" },
-        { name: "jQuery", icon: "/icons/jquery.svg" }
+        { name: "React", icon: isGitHubPages? "/Portfolio-page/icons/react.svg": "/icons/react.svg" },
+        { name: "React Native", icon: isGitHubPages? "/Portfolio-page/icons/react.svg": "/icons/react.svg" },
+        { name: "Node.js", icon: isGitHubPages? "/Portfolio-page/icons/nodejs.svg": "/icons/nodejs.svg" },
+        { name: "Express", icon: isGitHubPages? "/Portfolio-page/icons/express.svg": "/icons/express.svg" },
+        { name: "jQuery", icon: isGitHubPages? "/Portfolio-page/icons/jquery.svg": "/icons/jquery.svg" }
     ];
 
     // Tools
     let tools = [
-        { name: "git", icon: "/icons/git.svg" },
-        { name: "GitHub", icon: "/icons/gitHub.svg" },
-        { name: "VS Code", icon: "/icons/VS-Code.svg" },
-        { name: "JetBrains", icon: "/icons/JetBrains.svg" },
-        { name: "Eclipse", icon: "/icons/eclipse.svg" },
-        { name: "Linux VMware", icon: "/icons/vmware.svg" },
-        { name: "Postman", icon: "/icons/postman.svg" },
-        { name: "Wireshark", icon: "/icons/wireshark.svg" }
+        { name: "git", icon: isGitHubPages? "/Portfolio-page/icons/git.svg" : "/icons/git.svg" },
+        { name: "GitHub", icon: isGitHubPages? "/Portfolio-page/icons/gitHub.svg" : "/icons/gitHub.svg" },
+        { name: "VS Code", icon: isGitHubPages? "/Portfolio-page/icons/VS-Code.svg" : "/icons/VS-Code.svg" },
+        { name: "JetBrains", icon: isGitHubPages? "/Portfolio-page/icons/JetBrains.svg" : "/icons/JetBrains.svg" },
+        { name: "Eclipse", icon: isGitHubPages? "/Portfolio-page/icons/eclipse.svg" : "/icons/eclipse.svg" },
+        { name: "Linux VMware", icon: isGitHubPages? "/Portfolio-page/icons/vmware.svg" : "/icons/vmware.svg" },
+        { name: "Postman", icon: isGitHubPages? "/Portfolio-page/icons/postman.svg" : "/icons/postman.svg" },
+        { name: "Wireshark", icon: isGitHubPages? "/Portfolio-page/icons/wireshark.svg" : "/icons/wireshark.svg" }
     ];
 
     // Append skill rows to the skills-list div
@@ -269,9 +270,9 @@ function displayProject(){
     content_div.className="content";
     projects_div.appendChild(content_div);
 
-    addSubjectImage("/images/subjects/machine-learning.webp",pythonButtonClick);
-    addSubjectImage("/images/subjects/c-programming.png",cButtonClick);
-    addSubjectImage("/images/subjects/full-stack-web-development.jpg",fullStackButtonClick);
+    addSubjectImage(isGitHubPages? "/Portfolio-page/images/subjects/machine-learning.webp" :"/images/subjects/machine-learning.webp",pythonButtonClick);
+    addSubjectImage(isGitHubPages? "/Portfolio-page/images/subjects/c-programming.png" : "/images/subjects/c-programming.png",cButtonClick);
+    addSubjectImage(isGitHubPages? "/Portfolio-page/images/subjects/full-stack-web-development.jpg" :"/images/subjects/full-stack-web-development.jpg",fullStackButtonClick);
 }
 function addSubjectImage(img,func){
     const subject_div = document.getElementsByClassName("content")[0];
@@ -296,39 +297,14 @@ function createAndAppendProjectImage(sources,event_listeners){
         projects_list.appendChild(img);  
     }
 }
-// function createAndAppendProjectImage(sources, event_listeners) {
-//     // Get the projects div and create projects list
-//     const projects_div = document.getElementsByClassName("projects")[0];
-//     let projects_list = projects_div.querySelector(".projects-list");
-    
-//     // If projects_list doesn't exist, create it
-//     if (!projects_list) {
-//         projects_list = document.createElement("div");
-//         projects_list.className = "projects-list";
-//         projects_div.appendChild(projects_list);
-//     } else {
-//         // Clear existing content if projects_list already exists
-//         projects_list.innerHTML = '';
-//     }
-
-//     for (let i = 0; i < sources.length; i++) 
-//     {
-//         const img = document.createElement("img");
-//         img.src = sources[i];  
-//         img.className = "project-image";  
-//         img.addEventListener("click", event_listeners[i]);  
-//         projects_list.appendChild(img);  
-//     }
-// }
-
 function pythonButtonClick() {
     cleanProjectPage();
     createBackIcon(displayProject);
     // Arrays for sources, class names, and event listener functions
     const img_sources = [
-        "/images/Python/python1/unsupervised.webp",
-        "/images/Python/python2/Machine-Learning-Algorithms.webp",
-        "/images/Python/python3/ensemble.jpg"
+        isGitHubPages? "/Portfolio-page/images/Python/python1/unsupervised.webp" :"/images/Python/python1/unsupervised.webp",
+        isGitHubPages? "/Portfolio-page/images/Python/python2/Machine-Learning-Algorithms.webp" : "/images/Python/python2/Machine-Learning-Algorithms.webp",
+        isGitHubPages? "/Portfolio-page/images/Python/python3/ensemble.jpg" : "/images/Python/python3/ensemble.jpg"
     ];
     const event_listeners = [firstPythonProjectClicked, secondPythonProjectClicked, thirdPythonProjectClicked];
     // Call the helper function to append the images
@@ -339,12 +315,12 @@ function cButtonClick()
     cleanProjectPage();
     createBackIcon(displayProject);
     const img_sources = [
-        "/images/C/c1/proxy-server.jpg",
-        "/images/C/c2/chat-server.png",
-        "/images/C/c3/Linux-Inode.jpg.webp",
-        "/images/C/c4/bounded-buffer.jpg",
-        "/images/C/c5/Linux-Shell-Scripting.jpg",
-        "/images/C/c6/Memory-Management .jpg" 
+        isGitHubPages? "/Portfolio-page/images/C/c1/proxy-server.jpg" : "/images/C/c1/proxy-server.jpg",
+        isGitHubPages? "/Portfolio-page/images/C/c2/chat-server.png" : "/images/C/c2/chat-server.png",
+        isGitHubPages? "/Portfolio-/images/C/c3/Linux-Inode.jpg.webp" : "/images/C/c3/Linux-Inode.jpg.webp",
+        isGitHubPages? "/Portfolio-page/images/C/c4/bounded-buffer.jpg" : "/images/C/c4/bounded-buffer.jpg",
+        isGitHubPages? "/Portfolio-page/images/C/c5/Linux-Shell-Scripting.jpg" : "/images/C/c5/Linux-Shell-Scripting.jpg",
+        isGitHubPages? "/Portfolio-page/images/C/c6/Memory-Management .jpg" : "/images/C/c6/Memory-Management .jpg" 
     ];
     const event_listeners = [firstCProjectClicked,secondCProjectClicked,thirdCProjectClicked,fourthCProjectClicked,fifthCProjectClicked,sixthCProjectClicked];
     // Call the helper function to append the images
@@ -356,9 +332,8 @@ function fullStackButtonClick()
     cleanProjectPage();
     createBackIcon(displayProject);
     const img_sources = [
-        "/images/full-stack/full1/unsplash.jpg",
-        "/images/full-stack/full2/Rest.png",
-        "/images/full-stack/full3/Building-a-RESTful-API-Using-Node.webp"
+        isGitHubPages? "/Portfolio-page/images/full-stack/full2/Rest.png" : "/images/full-stack/full2/Rest.png",
+        isGitHubPages? "/Portfolio-page/images/full-stack/full3/Building-a-RESTful-API-Using-Node.webp" : "/images/full-stack/full3/Building-a-RESTful-API-Using-Node.webp"
     ];
     const event_listeners = [firstFullStackProjectClicked,secondFullStackProjectClicked,thirdFullStackProjectClicked];
     // Call the helper function to append the images
