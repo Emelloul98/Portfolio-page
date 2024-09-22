@@ -42,7 +42,7 @@ function loadHome(){
 
     /* resume link creation */
     let resume_link= document.createElement("a");
-    resume_link.href = "../files/Resume.pdf";
+    resume_link.href = "/files/Resume.pdf";
     resume_link.download = "Resume.pdf";
     resume_link.textContent = "Download Resume";
     resume_link.className = "resume-link";
@@ -82,7 +82,7 @@ function loadHome(){
 
     /* The static image inside the container */
     my_img = document.createElement("img");
-    my_img.src = "../images/emanuel/myImage.jpg";
+    my_img.src = "/images/emanuel/myImage.jpg";
     my_img.alt = "my image";
     image_container.appendChild(my_img);
 
@@ -143,36 +143,36 @@ function loadSkills() {
 
     // Programming Languages
     let programmingLanguages = [
-        { name: "Java", icon: "../icons/java.svg" },
-        { name: "Python", icon: "../icons/python.svg" },
-        { name: "C", icon: "../icons/C.svg" },
-        { name: "C++", icon: "../icons/C++.svg" },
-        { name: "JavaScript", icon: "../icons/javascript.svg" },
-        { name: "HTML", icon: "../icons/html5.svg" },
-        { name: "CSS", icon: "../icons/css.svg" },
-        { name: "Assembly", icon: "../icons/assembly.png" },
-        { name: "SQL", icon: "../icons/SQL.svg" }
+        { name: "Java", icon:"/icons/java.svg"},
+        { name: "Python", icon: "/icons/python.svg" },
+        { name: "C", icon: "/icons/C.svg" },
+        { name: "C++", icon: "/icons/C++.svg" },
+        { name: "JavaScript", icon: "/icons/javascript.svg" },
+        { name: "HTML", icon: "/icons/html5.svg" },
+        { name: "CSS", icon: "/icons/css.svg" },
+        { name: "Assembly", icon: "/icons/assembly.png" },
+        { name: "SQL", icon: "/icons/SQL.svg" }
     ];
 
     // Frameworks
     let frameworks = [
-        { name: "React", icon: "../icons/react.svg" },
-        { name: "React Native", icon: "../icons/react.svg" },
-        { name: "Node.js", icon: "../icons/nodejs.svg" },
-        { name: "Express", icon: "../icons/express.svg" },
-        { name: "jQuery", icon: "../icons/jquery.svg" }
+        { name: "React", icon: "/icons/react.svg" },
+        { name: "React Native", icon: "/icons/react.svg" },
+        { name: "Node.js", icon: "/icons/nodejs.svg" },
+        { name: "Express", icon: "/icons/express.svg" },
+        { name: "jQuery", icon: "/icons/jquery.svg" }
     ];
 
     // Tools
     let tools = [
-        { name: "git", icon: "../icons/git.svg" },
-        { name: "GitHub", icon: "../icons/gitHub.svg" },
-        { name: "VS Code", icon: "../icons/VS-Code.svg" },
-        { name: "JetBrains", icon: "../icons/JetBrains.svg" },
-        { name: "Eclipse", icon: "../icons/eclipse.svg" },
-        { name: "Linux VMware", icon: "../icons/vmware.svg" },
-        { name: "Postman", icon: "../icons/postman.svg" },
-        { name: "Wireshark", icon: "../icons/wireshark.svg" }
+        { name: "git", icon: "/icons/git.svg" },
+        { name: "GitHub", icon: "/icons/gitHub.svg" },
+        { name: "VS Code", icon: "/icons/VS-Code.svg" },
+        { name: "JetBrains", icon: "/icons/JetBrains.svg" },
+        { name: "Eclipse", icon: "/icons/eclipse.svg" },
+        { name: "Linux VMware", icon: "/icons/vmware.svg" },
+        { name: "Postman", icon: "/icons/postman.svg" },
+        { name: "Wireshark", icon: "/icons/wireshark.svg" }
     ];
 
     // Append skill rows to the skills-list div
@@ -269,9 +269,9 @@ function displayProject(){
     content_div.className="content";
     projects_div.appendChild(content_div);
 
-    addSubjectImage("../images/subjects/machine-learning.webp",pythonButtonClick);
-    addSubjectImage("../images/subjects/c-programming.png",cButtonClick);
-    addSubjectImage("../images/subjects/full-stack-web-development.jpg",fullStackButtonClick);
+    addSubjectImage("/images/subjects/machine-learning.webp",pythonButtonClick);
+    addSubjectImage("/images/subjects/c-programming.png",cButtonClick);
+    addSubjectImage("/images/subjects/full-stack-web-development.jpg",fullStackButtonClick);
 }
 function addSubjectImage(img,func){
     const subject_div = document.getElementsByClassName("content")[0];
@@ -326,9 +326,9 @@ function pythonButtonClick() {
     createBackIcon(displayProject);
     // Arrays for sources, class names, and event listener functions
     const img_sources = [
-        "../images/Python/python1/unsupervised.webp",
-        "../images/Python/python2/Machine-Learning-Algorithms.webp",
-        "../images/Python/python3/ensemble.jpg"
+        "/images/Python/python1/unsupervised.webp",
+        "/images/Python/python2/Machine-Learning-Algorithms.webp",
+        "/images/Python/python3/ensemble.jpg"
     ];
     const event_listeners = [firstPythonProjectClicked, secondPythonProjectClicked, thirdPythonProjectClicked];
     // Call the helper function to append the images
@@ -339,12 +339,12 @@ function cButtonClick()
     cleanProjectPage();
     createBackIcon(displayProject);
     const img_sources = [
-        "../images/C/c1/proxy-server.jpg",
-        "../images/C/c2/chat-server.png",
-        "../images/C/c3/Linux-Inode.jpg.webp",
-        "../images/C/c4/bounded-buffer.jpg",
-        "../images/C/c5/Linux-Shell-Scripting.jpg",
-        "../images/C/c6/Memory-Management .jpg" 
+        "/images/C/c1/proxy-server.jpg",
+        "/images/C/c2/chat-server.png",
+        "/images/C/c3/Linux-Inode.jpg.webp",
+        "/images/C/c4/bounded-buffer.jpg",
+        "/images/C/c5/Linux-Shell-Scripting.jpg",
+        "/images/C/c6/Memory-Management .jpg" 
     ];
     const event_listeners = [firstCProjectClicked,secondCProjectClicked,thirdCProjectClicked,fourthCProjectClicked,fifthCProjectClicked,sixthCProjectClicked];
     // Call the helper function to append the images
@@ -356,9 +356,9 @@ function fullStackButtonClick()
     cleanProjectPage();
     createBackIcon(displayProject);
     const img_sources = [
-        "../images/full-stack/full1/unsplash.jpg",
-        "../images/full-stack/full2/Rest.png",
-        "../images/full-stack/full3/Building-a-RESTful-API-Using-Node.webp"
+        "/images/full-stack/full1/unsplash.jpg",
+        "/images/full-stack/full2/Rest.png",
+        "/images/full-stack/full3/Building-a-RESTful-API-Using-Node.webp"
     ];
     const event_listeners = [firstFullStackProjectClicked,secondFullStackProjectClicked,thirdFullStackProjectClicked];
     // Call the helper function to append the images
@@ -484,7 +484,7 @@ function createBackIcon(func){
 function firstPythonProjectClicked(){
     title="Unsupervised Learning on a Digits Dataset";
     description="In this project, I applied unsupervised learning techniques on the digits dataset from sklearn, which contains 64-dimensional data representing hand-written digits. My objective was to cluster the data into three distinct groups using Gaussian Mixture Model (GMM) and KMeans algorithms. These clustering methods were applied to identify patterns and group the data without any prior labels. I evaluated the performance of both algorithms using metrics such as silhouette score, inertia, and Bayesian Information Criterion (BIC), while visualizing the resulting clusters to gain deeper insights into the structure of the data. Additionally, I explored how dimensionality reduction techniques, such as PCA, could enhance clustering results and make visual interpretation more accessible.";
-    images=["../images/Python/python1/realData.png","../images/Python/python1/elbowFunction.png","","../images/Python/python1/kmean-vs-GMM.png"];
+    images=["/images/Python/python1/realData.png","/images/Python/python1/elbowFunction.png","","/images/Python/python1/kmean-vs-GMM.png"];
     link="https://github.com/Emelloul98/Clustering-with-GMM-and-KMeans"
     pca="Principal Component Analysis (PCA): I started by applying PCA to reduce the dimensionality of the data from 64 to 2 dimensions, allowing me to visualize the data in a two-dimensional space. This transformation helped me understand the underlying structure of the data and identify patterns that could be used for clustering.";
     elbow="Elbow Method: I used the elbow method to determine the optimal number of clusters for the K-Means algorithm. By plotting the inertia values for different values of k, I identified the point where the rate of decrease in inertia slows down, indicating the optimal number of clusters.";
@@ -496,7 +496,7 @@ function firstPythonProjectClicked(){
 function secondPythonProjectClicked(){
     title="ML Optimization Algorithms Comparison";
     description="This project compares several machine learning optimization algorithms, including Stochastic Gradient Descent (SGD), Batch Gradient Descent, and their Singular Value Decomposition (SVD)-based versions for dimensionality reduction. The goal was to analyze the performance, convergence, and efficiency of these algorithms across various datasets. By incorporating SVD, I examined the effect of reducing the feature space on optimization performance. The project includes Python implementations of the algorithms, Jupyter Notebooks for testing, and visualizations of convergence behaviors and execution times.";
-    images=["../images/Python/python2/comparison1.png", "../images/Python/python2/comparison2.png"];
+    images=["/images/Python/python2/comparison1.png", "/images/Python/python2/comparison2.png"];
     link="https://github.com/Emelloul98/Machine-Learning-Optimization-Algorithms-Comparison";
     firstImageDescription="Convergence plots for Stochastic Gradient Descent (SGD), Batch Gradient Descent, and SVD-enhanced algorithms were generated to assess how quickly each method approaches the optimal solution. The visualizations highlight the differences in convergence speed, with SGD showing faster convergence in early stages but sometimes overshooting the minimum. Batch Gradient Descent, while slower per iteration, provides a more stable path to convergence, especially in noisy datasets.";
     secondImageDescription="Execution time comparisons were made for the different algorithms, revealing how computationally expensive they are. With SVD, dimensionality reduction significantly lowered execution times, making the optimization more efficient for large datasets. The experiment emphasized that while SVD reduces complexity, it may sometimes slightly compromise the accuracy of the final model compared to using the full feature set.";
@@ -506,7 +506,7 @@ function secondPythonProjectClicked(){
 function thirdPythonProjectClicked(){ 
     title="Ensemble Learning Algorithms Comparison";
     description="This project compares the performance and efficiency of ensemble learning algorithms, including AdaBoost, Bagging, and K-Fold Cross Validation, in predicting employee attrition. The goal was to evaluate each method's accuracy, bias-variance tradeoff, and execution time using real-world datasets. The project includes Python implementations of the algorithms, Jupyter Notebooks for testing, and visualizations of accuracy, performance metrics, and computational efficiency.";
-    images=["../images/Python/python3/feature selection.png", "../images/Python/python3/adaboost.png"];
+    images=["/images/Python/python3/feature selection.png", "/images/Python/python3/adaboost.png"];
     link="https://github.com/Emelloul98/Ensemble-Learning-Algorithms-AdaBoost-K-Fold-Cross-Validation-and-Bagging.git";
     firstImageDescription="The first image shows the effect of feature selection on the F1 score, where increasing the number of selected features significantly impacts model performance. The F1 score fluctuates as more features are introduced, revealing a sweet spot where the balance between the number of features and model accuracy is optimized.";
     secondImageDescription="The second image presents the F1 score comparison for AdaBoost with decision trees at varying max depths. The train F1 score improves consistently with deeper trees, while the test F1 score plateaus after a certain depth, indicating the point where the model may start overfitting.";
@@ -608,7 +608,7 @@ function sixthCProjectClicked(){
 function firstFullStackProjectClicked() { 
     title = "Image Search Application";
     description = "This project is an interactive image search application that utilizes the Unsplash API to allow users to search for and display images based on their queries. It features a responsive design with a user-friendly interface that updates dynamically as the user types in the search input. Key functionalities include displaying images in groups, loading more results, and providing detailed information about each image when clicked.";
-    images = ["","../images/full-stack/full1/Example1.png","../images/full-stack/full1/Example2.png"];
+    images = ["","/images/full-stack/full1/Example1.png","/images/full-stack/full1/Example2.png"];
     link = "http://malloulem.mysoft.jce.ac.il/ex1/";
     texts = [
         "The application starts by initializing the HTML structure dynamically using JavaScript, creating a header, search input, and main sections for images and information. This approach enhances modularity and separation of concerns in the code, making it easy to maintain and expand.",
@@ -622,7 +622,7 @@ function firstFullStackProjectClicked() {
 function secondFullStackProjectClicked() { 
     title = "Project Management using REST API";
     description = "This project is a distributed project management system utilizing a REST API to manage projects, team members, and project-related images sourced from the Unsplash API. It includes robust client-side validation and server-side schema validation to ensure data integrity. Core functionalities include CRUD operations for projects, image management, and a user-friendly interface for project tracking.";
-    images = ["","","../images/full-stack/full2/table.png","../images/full-stack/full2/project-form.png","../images/full-stack/full2/image-search.png","../images/full-stack/full2/project-images.png"];
+    images = ["","","/images/full-stack/full2/table.png","/images/full-stack/full2/project-form.png","/images/full-stack/full2/image-search.png","/images/full-stack/full2/project-images.png"];
     link = "https://github.com/Emelloul98/Project-Management-REST-API-with-Unsplash-Integration.git";
     texts = [
         "The system begins with a server-side setup using Node.js and Express to manage routing for REST API requests. CRUD operations are fully implemented for projects, allowing users to create, read, update, and delete project information. Each project includes details like project name, description, team members, and start dates. Server-side validation schemas, written using libraries like Joi, ensure data integrity before insertion or updates are made to the JSON database.",        
