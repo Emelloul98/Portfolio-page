@@ -357,8 +357,9 @@ function fullStackButtonClick()
     createBackIcon(displayProject);
     const img_sources = [
         "../images/full-stack/full1/unsplash.jpg",
+        "../images/full-stack/full2/Rest.jpeg"
     ];
-    const event_listeners = [firstFullStackProjectClicked];
+    const event_listeners = [firstFullStackProjectClicked,secondFullStackProjectClicked];
     // Call the helper function to append the images
     createAndAppendProjectImage(img_sources,event_listeners);
     
@@ -615,5 +616,20 @@ function firstFullStackProjectClicked() {
         "The app then presents these images with hover effects to enhance interactivity, with options to load more results if necessary. Each image can be clicked to display additional details, such as the title and like count.",
         "The 'Load More' button uses a similar AJAX call to fetch additional results in a paginated manner, allowing the user to see more results without reloading the page."
     ];   
-    add_project(title, description, images, link, texts, cButtonClick);
+    add_project(title, description, images, link, texts, fullStackButtonClick);
+}
+function secondFullStackProjectClicked() { 
+    title = "Project Management using REST API";
+    description = "This project is a distributed project management system utilizing a REST API to manage projects, team members, and project-related images sourced from the Unsplash API. It includes robust client-side validation and server-side schema validation to ensure data integrity. Core functionalities include CRUD operations for projects, image management, and a user-friendly interface for project tracking.";
+    images = ["","","../images/full-stack/full2/table.png","../images/full-stack/full2/project-form.png","../images/full-stack/full2/image-search.png","../images/full-stack/full2/project-images.png"];
+    link = "https://github.com/Emelloul98/Project-Management-REST-API-with-Unsplash-Integration.git";
+    texts = [
+        "The system begins with a server-side setup using Node.js and Express to manage routing for REST API requests. CRUD operations are fully implemented for projects, allowing users to create, read, update, and delete project information. Each project includes details like project name, description, team members, and start dates. Server-side validation schemas, written using libraries like Joi, ensure data integrity before insertion or updates are made to the JSON database.",        
+        "Client-side validation is also a key feature of this project. When users interact with forms to add or update projects, the application ensures that required fields are filled out and that data types (such as dates and text fields) are properly validated before the form is submitted. The validation provides immediate feedback to users, enhancing the overall usability of the system.",        
+        "The first Image shows the main table that displays the existing projects in the system. This dynamic table fetches data from the backend using AJAX requests and updates the UI in real-time. Users can view project details, update existing projects, or delete them using the table's action buttons.",    
+        "New projects can be added via a form interface, demonstrated in the second image. This form allows users to input details about the project and its team members. It also triggers client-side validation before submitting the data through a POST request to the REST API, where server-side validation further ensures the integrity of the entered data.",    
+        "The third image displays the image search page, which utilizes the Unsplash API. Here, users can search for images by keyword, fetch results dynamically, and select images to associate with specific projects. The REST API manages these image-related operations by storing links to the selected images alongside the project records in the JSON database.",    
+        "Finally, the fourth image shows the interface where users can view the images currently associated with a project. These images are fetched from the database and displayed in a grid format, allowing users to remove images or view additional details. All image-related functionality is handled through RESTful routes that enable creating, updating, and deleting images for each project."
+    ];   
+    add_project(title, description, images, link, texts, fullStackButtonClick);
 }
