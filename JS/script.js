@@ -317,7 +317,7 @@ function cButtonClick()
     const img_sources = [
         isGitHubPages? "/Portfolio-page/images/C/c1/proxy-server.jpg" : "/images/C/c1/proxy-server.jpg",
         isGitHubPages? "/Portfolio-page/images/C/c2/chat-server.png" : "/images/C/c2/chat-server.png",
-        isGitHubPages? "/Portfolio-/images/C/c3/Linux-Inode.jpg.webp" : "/images/C/c3/Linux-Inode.jpg.webp",
+        isGitHubPages? "/Portfolio-page/images/C/c3/Linux-Inode.jpg.webp" : "/images/C/c3/Linux-Inode.jpg.webp",
         isGitHubPages? "/Portfolio-page/images/C/c4/bounded-buffer.jpg" : "/images/C/c4/bounded-buffer.jpg",
         isGitHubPages? "/Portfolio-page/images/C/c5/Linux-Shell-Scripting.jpg" : "/images/C/c5/Linux-Shell-Scripting.jpg",
         isGitHubPages? "/Portfolio-page/images/C/c6/Memory-Management .jpg" : "/images/C/c6/Memory-Management .jpg" 
