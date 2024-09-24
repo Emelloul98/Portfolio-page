@@ -298,11 +298,9 @@ a.resume-link:hover {
     }
     .name {
         font-size: 2rem; 
-        margin-bottom: 1rem;
     }
     .hello {
         font-size: 3.2rem; /* Adjust hello size */
-        margin-top: 1.5rem;
     }
     .personal-info p{
         font-size: 1rem;
