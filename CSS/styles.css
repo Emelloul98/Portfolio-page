@@ -296,11 +296,16 @@ a.resume-link:hover {
         height: 20vh;
         margin-top: 10rem;
     }
+    .personal-info h2{
+        margin:0;
+    }
     .name {
         font-size: 2rem; 
+        margin:0;
     }
     .hello {
         font-size: 3.2rem; /* Adjust hello size */
+        margin:0;
     }
     .personal-info p{
         font-size: 1rem;
@@ -320,7 +325,7 @@ a.resume-link:hover {
     }
     .social {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         margin-bottom: 1rem;
@@ -332,7 +337,7 @@ a.resume-link:hover {
     }
     .home-icons {
         margin-bottom: 1rem;
-        margin-left:0;
+        margin-left: 1rem;
     }
     a.resume-link, .home-icons {
         position: relative;
