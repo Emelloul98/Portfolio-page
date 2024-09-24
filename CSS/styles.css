@@ -18,25 +18,6 @@ html, body {
     margin: 0;
 }
 
-/* body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    background: linear-gradient(135deg, #0f0c29, #302b63,#24243e);
-    background: #16222A;  
-    background: -webkit-linear-gradient(to right, #3A6073, #16222A);  
-    background: linear-gradient(to right, #3A6073, #16222A); 
-    background: #232526;  
-     background: -webkit-linear-gradient(to right, #414345, #232526);  
-     background: linear-gradient(to right, #414345, #232526);  
-     background: #780206;  
-     background: -webkit-linear-gradient(to right, #061161, #780206);  
-     background: linear-gradient(to right, #061161, #780206); 
-          
-     background: #000000; 
-     background: -webkit-linear-gradient(to right, #434343, #000000);  
-     background: linear-gradient(to right, #434343, #000000);   
-  } */
-
 /* header */
 
 .header{
@@ -47,9 +28,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 20%;
-    /* background-color: black; */
     color: white;
-    /* margin-bottom: 2rem; */
 }
 .icons{
     display: flex;
@@ -73,7 +52,6 @@ html, body {
     align-items: center;
     list-style: none;
     padding: 0;
-
 }
 .nav-item{
     display: flex;
@@ -86,6 +64,54 @@ html, body {
     text-decoration: none;
     font-size: 1.5rem;
     position: relative;
+}
+/* Media Queries for Smaller Screens */
+@media (max-width: 1200px) {
+    .nav-item {
+        padding-left: 5rem;
+    }
+    .icon {
+        padding-right: 30px;
+    }
+}
+@media (max-width: 900px) {
+    .nav-bar {
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nav-item {
+        padding-left: 1rem ;
+        margin-bottom: 1rem;
+    }
+    .nav-item a {
+        font-size: 1.25rem;
+    }
+    .icon {
+        padding-right: 20px;
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 700px) {
+    .header {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .icons {
+        margin-bottom: 2rem;
+    }
+    .nav-item a {
+        font-size: 1rem;
+    }
+    .icon {
+        padding-right: 10px;
+        font-size: 1rem;
+    }
+    .nav-item {
+        padding-left: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* Main */
@@ -124,15 +150,13 @@ html, body {
     line-height: 1.8; 
     margin-bottom: 1rem;
 }
-/* Wrapper to center everything */
 .circle-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh; 
 }
-/* The rotating circle */
 .rotating-circle {
     width: 20rem;
     height: 20rem;
@@ -140,7 +164,7 @@ html, body {
     margin-left: 5rem;
 }
 .image-container {
-    position: absolute; /* Absolute positioning to place it in the middle */
+    position: absolute; 
     width: 18rem;
     height: 18rem;
     border-radius: 50%; 
@@ -151,14 +175,7 @@ html, body {
     height: 100%;
     object-fit: cover; 
 }
-@keyframes rotate {
-    from {
-        transform: rotate(0deg); 
-    }
-    to {
-        transform: rotate(360deg); 
-    }
-}
+
 a.resume-link {
     background-color: #007bff;
     color: white; 
@@ -188,6 +205,97 @@ a.resume-link:hover {
     gap: 0.8rem;
     margin-left: 2rem; 
 }
+
+@media (max-width: 768px) {
+    .home-page {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center content */
+    }
+    .personal-info {
+        align-items: center;
+        text-align: center;
+        height: 20vh;
+        margin-top: 4rem;
+    }
+    .personal-info h2{
+        margin-top: 6rem;
+    }
+    .name {
+        font-size: 2rem; /* Adjust font size */
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .hello {
+        font-size: 3.2rem; /* Adjust hello size */
+        margin-top: 1rem;
+
+    }
+
+    .rotating-circle {
+        width: 15rem;
+        height: 15rem;
+        margin-left: 0;
+    }
+
+    .image-container {
+        width: 13rem;
+        height: 13rem;
+        margin-left: 0;
+        margin-top: 10rem; 
+    }
+
+    a.resume-link {
+        font-size: 0.9rem;
+        width: 50%; 
+        margin-top: 1rem;
+    }
+
+    .home-icons {
+        margin-left: 1rem;
+        margin-top:1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .personal-info {
+        padding: 1rem;
+        margin-bottom: 0; 
+    }
+    .personal-info h2 {
+        margin-top:2rem;
+    }
+    .name {
+        font-size: 1.5rem;
+    }
+    .hello {
+        font-size: 2.5rem;
+    }
+    .personal-info p {
+        font-size: 0.7rem;
+    }
+    .rotating-circle {
+        width: 10rem;
+        height: 10rem;
+        margin-top: 1rem; /* Keep image closer to text */
+    }
+    .image-container {
+        width: 8rem;
+        height: 8rem;
+        margin-top: -1.5rem; /* Bring the image up */
+    }
+
+    a.resume-link {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        width: 70%;
+    }
+
+    .home-icons {
+        gap: 0.5rem;
+        margin-left: 2rem;
+    }
+}
+
 /* skills */
 
 .skills {
@@ -219,13 +327,31 @@ a.resume-link:hover {
 }
 @media (min-width: 1700px) {
     .skill-row {
+        grid-template-columns: 300px 1fr; /* Increase column size */
         margin-bottom: 7rem;
+    }
+}
+@media (min-width: 2000px) {
+    .skill-row {
+        grid-template-columns: 1fr 1fr; /* Two equal columns for larger screens */
+        margin-bottom: 8rem;
     }
 }
 .skills h2 {
     display: flex;
     font-size: 1.75rem; 
 }
+@media (max-width: 500px) {
+    .skills h2 {
+        font-size: 0.8rem; 
+    }
+}
+@media (max-width: 768px) {
+    .skills h2 {
+        font-size: 1.3rem; 
+    }
+}
+
 .skills ul {
     display: flex;
     gap: 0.5rem; 
@@ -255,12 +381,47 @@ a.resume-link:hover {
     overflow: hidden; /* Hide overflowing content */
     text-align: center; /* Center text inside the box */
 }
+@media (max-width: 500px) {
+    .skills li {
+        width: calc(100% - 1rem); 
+        font-size: 0.1rem; 
+    }
+}
+@media (max-width: 768px) {
+    .skills li {
+        width: calc(50% - 1rem);
+        font-size:0.9rem 
+    }
+}
 .skill-icon{
     width: 50px;
     height: 50px;
     margin-bottom: 0.6rem;
 }
-
+@media (max-width: 500px) {
+    .skill-icon {
+        width: 10px;
+        height: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .skill-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (min-width: 1700px) {
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (min-width: 2000px) {
+    .skill-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
 /* projects-subject */
 
 .projects {
@@ -320,11 +481,60 @@ a.resume-link:hover {
     .project-image {
         width: calc(50% - 20px);
     }
+    .subject-image {
+        width: 18rem;
+        height: 12rem;
+        margin-bottom: 1rem; /* Add bottom margin to separate from text */
+    }
+    .project-image {
+        width: 20rem; 
+        height: 14rem; /* Maintain aspect ratio */
+    }
 }
-
+@media (max-width: 1000px)
+{
+    .subject-image {
+        width: 15rem;
+        height: 10rem;
+        margin-bottom: 1rem; /* Add bottom margin to separate from text */
+    }
+    .project-image {
+        width: 16rem; 
+        height: 12rem; /* Maintain aspect ratio */
+    }
+}
 @media (max-width: 768px) {
     .project-image {
         width: 100%;
+    }
+    .content {
+        flex-direction: column; /* Stack the content vertically */
+        height: auto; /* Allow height to adjust based on content */
+        margin-bottom: 5rem;
+    }
+
+    .subject-image {
+        width: 18rem;
+        height: 12rem; 
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 1rem; /* Add bottom margin to separate from text */
+    }
+
+    .project-image {
+        width: 15rem; 
+        height: 10rem; 
+    }
+}
+@media (max-width: 500px) {
+    .subject-image {
+        width: 15rem; 
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .project-image {
+        width: 10rem;
+        height: auto;
     }
 }
 
