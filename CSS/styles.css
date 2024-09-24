@@ -653,3 +653,54 @@ a.resume-link:hover {
     margin-right: 3rem;
     cursor:pointer;
 }
+
+@media (max-width: 768px) {
+    .current-project {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .project-description {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .current-project p {
+        font-size: 0.9em; /* Slightly smaller font for better readability */
+        margin: 15px 0; /* Adjust margin */
+    }
+
+    .current-project img {
+        height: auto; /* Ensure the height is responsive */
+        margin: 15px auto; /* Reduce margin around images */
+    }
+    .title-link-container{
+        margin-bottom: 4rem;
+        position: static;
+        align-items: start;
+    }
+    .title-link-container h2 {
+        font-size: 1.3rem; /* Adjust heading size */
+        margin-right: 8rem;
+    }
+
+    .title-link-container a {
+        margin-right: 1rem;
+    }
+}
+
+/* Media query for extra-small screens (phones) */
+@media (max-width: 500px) {
+    .title-link-container{
+        margin-bottom: 4rem;
+        position: static;
+        align-items: start;
+    }
+    .title-link-container h2 {
+        font-size: 1.2rem; /* Adjust heading size */
+        margin-right: 8rem;
+    }
+
+    .title-link-container a {
+        margin-right: 1rem;
+    }
+}
