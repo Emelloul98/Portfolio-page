@@ -173,7 +173,8 @@ function loadSkills() {
         { name: "Eclipse", icon: isGitHubPages? "/Portfolio-page/icons/eclipse.svg" : "/icons/eclipse.svg" },
         { name: "Linux VMware", icon: isGitHubPages? "/Portfolio-page/icons/vmware.svg" : "/icons/vmware.svg" },
         { name: "Postman", icon: isGitHubPages? "/Portfolio-page/icons/postman.svg" : "/icons/postman.svg" },
-        { name: "Wireshark", icon: isGitHubPages? "/Portfolio-page/icons/wireshark.svg" : "/icons/wireshark.svg" }
+        { name: "Wireshark", icon: isGitHubPages? "/Portfolio-page/icons/wireshark.svg" : "/icons/wireshark.svg" },
+        { name: "MongoDB", icon: isGitHubPages? "/Portfolio-page/icons/mongodb.svg" : "/icons/mongodb.svg" },
     ];
 
     // Append skill rows to the skills-list div
