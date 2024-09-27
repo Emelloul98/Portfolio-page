@@ -411,17 +411,16 @@ a.resume-link:hover {
         flex-direction: column;
         margin-bottom: 3rem;
     }
-    .skills li {
-        width: 8rem; 
-        font-size: 1rem; 
-        height: 5rem;
+    .skills li{
+        width: 4rem;
+        height: 4rem;
+        font-size: 0.9rem;
     }
     .skill-icon{
-        width: 25px;
-        height: 25px;
-        margin-bottom: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.4rem;
     }
-
 }
 @media (max-width: 768px) {
     .skills h2 {
@@ -432,10 +431,15 @@ a.resume-link:hover {
         flex-direction: column;
         margin-bottom: 3rem;
     }
+    .skills li{
+        width: 5rem;
+        height: 5rem;
+        font-size: 1rem;
+    }
     .skill-icon{
-        width: 35px;
-        height: 35px;
-        margin-bottom: 0.6rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -545,6 +549,12 @@ a.resume-link:hover {
         width: 15rem; 
         height: 10rem; 
     }
+    .projects-list{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 @media (max-width: 500px) {
     .projects{
@@ -558,7 +568,13 @@ a.resume-link:hover {
 
     .project-image {
         width: 10rem;
-        height: auto;
+        height: 7rem;
+    }
+    .projects-list{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;        
     }
 }
 
@@ -697,34 +713,52 @@ a.resume-link:hover {
         height: auto; /* Ensure the height is responsive */
         margin: 15px auto; /* Reduce margin around images */
     }
-    .title-link-container{
-        margin-bottom: 4rem;
-        position: static;
-        align-items: start;
+
+    /* Make the title and link stack vertically */
+    .title-link-container {
+        display: flex;
+        flex-direction: column-reverse; /* Switch to column layout */
+        align-items: center; /* Center align the content */
+        justify-content: center;
+        position: relative; /* Keep the elements in place relative to their container */
     }
+
     .title-link-container h2 {
-        font-size: 1.3rem; /* Adjust heading size */
-        margin-right: 8rem;
+        margin-bottom: 10px; /* Add space below the title */
+        position: relative; /* Ensure title stays in place without scrolling off */
+        left: 0; /* Reset left offset */
+        transform: none; /* Reset transform */
     }
 
     .title-link-container a {
-        margin-right: 1rem;
+        margin-right: 0;
+        padding: 10px 20px;
+        font-size: 1rem; /* Adjust size */
+        position: relative; /* Ensure link stays in place */
+        margin-bottom: 1rem;
     }
 }
 
-/* Media query for extra-small screens (phones) */
 @media (max-width: 500px) {
-    .title-link-container{
-        margin-bottom: 4rem;
-        position: static;
-        align-items: start;
+    .title-link-container {
+        display: flex;
+        flex-direction: column-reverse; /* Ensure column layout on smaller screens */
+        align-items: center; /* Center align the content */
+        position: relative; /* Keep the elements in place relative to their container */
+        justify-content: center;
     }
+
     .title-link-container h2 {
-        font-size: 1.2rem; /* Adjust heading size */
-        margin-right: 8rem;
+        margin-bottom: 10px; /* Add space below the title */
+        position: relative; /* Ensure title stays in place without scrolling off */
+        left: 0; /* Reset left offset */
+        transform: none; /* Reset transform */
     }
 
     .title-link-container a {
-        margin-right: 1rem;
+        margin-right: 0;
+        font-size: 0.9rem; /* Slightly smaller for smaller screens */
+        position: relative; /* Ensure link stays in place */
+        margin-bottom: 1rem;
     }
 }

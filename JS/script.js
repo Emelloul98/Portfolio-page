@@ -458,7 +458,7 @@ function createBackIcon(func){
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 function firstPythonProjectClicked(){
-    title="Unsupervised Learning on a Digits Dataset";
+    title="Unsupervised Learning";
     description="In this project, I applied unsupervised learning techniques on the digits dataset from sklearn, which contains 64-dimensional data representing hand-written digits. My objective was to cluster the data into three distinct groups using Gaussian Mixture Model (GMM) and KMeans algorithms. These clustering methods were applied to identify patterns and group the data without any prior labels. I evaluated the performance of both algorithms using metrics such as silhouette score, inertia, and Bayesian Information Criterion (BIC), while visualizing the resulting clusters to gain deeper insights into the structure of the data. Additionally, I explored how dimensionality reduction techniques, such as PCA, could enhance clustering results and make visual interpretation more accessible.";
     images = [
         isGitHubPages ? "/Portfolio-page/images/Python/python1/realData.png" : "/images/Python/python1/realData.png",
