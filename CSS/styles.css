@@ -437,9 +437,9 @@ a.resume-link:hover {
         font-size: 1rem;
     }
     .skill-icon{
-        width: 2.5rem;
-        height: 2.5rem;
-        margin-bottom: 0.5rem;
+        width: 2.3rem;
+        height: 2.3rem;
+        margin-bottom: 0.4rem;
     }
 }
 
@@ -762,3 +762,172 @@ a.resume-link:hover {
         margin-bottom: 1rem;
     }
 }
+
+
+/* Contact page */
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); 
+    max-width: 600px;
+    margin: 2rem auto;
+    color: white;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, .input-group textarea {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    color: #243B55;
+    outline: none;
+}
+
+.input-group input::placeholder, .input-group textarea::placeholder {
+    color: #243B55;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    background: rgba(255, 255, 255, 1);
+}
+
+.submit-btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+/* Media query for max-width of 764px */
+@media(max-width: 764px) {
+    /* Contact form adjustments */
+    .contact {
+        margin-top: 3rem; /* Push down the contact section */
+        padding: 1rem; /* Add some padding for better spacing */
+    }
+    
+    .contact h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+    
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Add spacing between form fields */
+        max-width: 90%; /* Limit form width */
+        margin: 0 auto; /* Center the form */
+    }
+    
+    .form-field {
+        width: 100%; /* Ensure input fields take full width */
+    }
+
+    .contact-form textarea {
+        width: 100%;
+        height: 150px;
+    }
+    
+    /* Adjust submit button */
+    .contact-form button {
+        width: 100%; /* Full width button */
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query for max-width of 500px specifically for the contact page */
+@media(max-width: 500px) {
+    /* Contact form adjustments */
+    .contact {
+        padding: 0.5rem;
+        margin-top: 4rem; /* Additional space if needed */
+    }
+    
+    .contact h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    /* Contact form fields */
+    .contact-form {
+        gap: 0.8rem; /* Reduce spacing between form fields */
+        max-width: 90%; /* Limit form width for smaller screens */
+        margin: 0 auto; /* Center the form */
+    }
+
+    .form-field {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .contact-form textarea {
+        width: 100%;
+        height: 120px; /* Slightly smaller for small screens */
+    }
+
+    /* Submit button */
+    .contact-form button {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+    
+    /* Adjust form layout for smaller screens */
+    .contact-form input, .contact-form textarea {
+        font-size: 1rem;
+    }
+}
+

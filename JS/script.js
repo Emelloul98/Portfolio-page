@@ -407,8 +407,25 @@ function add_project(proj_title,proj_description,proj_images,proj_link,proj_text
     project_div.appendChild(new_div);
 }
 
+// function loadContact(){
+//     add_selected_css_to_page("Contact");
+//     // Check if the contact page is already open
+//     let isExist = document.getElementById("contactPage");
+//     if (isExist != null) return;
+
+//     // Remove the current project page
+//     let current_div = document.getElementsByClassName("current-page")[0];
+//     current_div.innerHTML = ""; // Clear existing content
+
+//     // Create the contact page div
+//     let new_div = document.createElement("div");
+//     new_div.className = "contact";
+//     new_div.id = "contactPage";
+//     current_div.appendChild(new_div);
+// }
 function loadContact(){
     add_selected_css_to_page("Contact");
+    
     // Check if the contact page is already open
     let isExist = document.getElementById("contactPage");
     if (isExist != null) return;
@@ -421,6 +438,27 @@ function loadContact(){
     let new_div = document.createElement("div");
     new_div.className = "contact";
     new_div.id = "contactPage";
+    
+    // Add form HTML
+    new_div.innerHTML = `
+        <h2 class="contact-title">Get in Touch</h2>
+        <form class="contact-form">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    `;
+    current_div.appendChild(new_div);
 }
 
 function add_selected_css_to_page(page_name) {
